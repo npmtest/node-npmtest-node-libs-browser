@@ -1,1 +1,39 @@
-{     "devDependencies": {         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-node-libs-browser",     "homepage": "https://github.com/npmtest/node-npmtest-node-libs-browser",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-node-libs-browser.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic test coverage for  [node-libs-browser (v2.0.0)](http://github.com/webpack/node-libs-browser)  [![npm package](https://img.shields.io/npm/v/npmtest-node-libs-browser.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-node-libs-browser) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-node-libs-browser.svg)](https://travis-ci.org/npmtest/node-npmtest-node-libs-browser)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-node-libs-browser",
+    "keywords": [
+        "coverage",
+        "test",
+        "node-libs-browser"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_node_libs_browser.js",
+    "name": "npmtest-node-libs-browser",
+    "nameAlias": "npmtest_node_libs_browser",
+    "nameOriginal": "npmtest-node-libs-browser",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-node-libs-browser.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "2017.4.23"
+}
